@@ -1,0 +1,64 @@
+{% block title %}{% endblock title%}
+{% block  body %}
+
+<head>
+  <style>
+    body {
+      background-image: url(/static/images/mumbailocal.jpg);
+    }
+  </style>
+  <link rel="stylesheet" href="/static/css/login.css">
+  <link rel="stylesheet" href="/static/css/heading.css">
+</head>
+
+<body>
+  <div class="welcome-header">
+    <i class="fas fa-subway  emu-icon"></i>
+    <h3>
+      WELCOME TO KALVA CARSHED CR-EMU
+    </h3>
+    <span class="login-page-datetime" id="ct7"></span>
+  </div>
+  <div class="form-container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <!-- <img src="/static/images/Subway.gif" alt="! Something went wrong"> -->
+        <video autoplay muted loop id="myVideo" class="local-animation" >
+          <source src="/static/images/1648626681197.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="back">
+        <img src="/static/images/Subway.gif" alt="! Something went wrong">
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Login</div>
+          <form action="/login" method="post">
+            {% csrf_token %}
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user-plus"></i>&nbsp;
+                <input type="text" id="username" placeholder="User Name" name="username" required autocomplete="off">
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" name="password" required autocomplete="off">
+              </div>
+              <!-- <div class="text"><a href="#">Forgot password?</a></div> -->
+              <div class="button input-box">
+                <input type="submit" value="Login">
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/autodate.js"></script>
+</body>
+
+{% endblock body%}
+
+
